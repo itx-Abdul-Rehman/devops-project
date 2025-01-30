@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - develop
+      
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 
 jobs:
   build:
@@ -11,31 +17,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+
       - name: Install dependencies
         run: npm install
+
       - name: Build website using Parcel
-        run: npx parcel build src/*.html --dist-dir dist
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        run: parcel build src/*.html
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
+
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    needs: build  
     environment:
-      name: development-env
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: development-env 
+      url: ${{ steps.deployment.outputs.page_url }}  
     steps:
       - name: Deploy to Development
         id: deployment
-        uses: actions/deploy-pages@v2
-        with:
-          folder: dist
+        uses: actions/deploy-pages@v4
