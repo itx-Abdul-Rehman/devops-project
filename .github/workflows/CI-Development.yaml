@@ -1,12 +1,11 @@
-name: Development CI/CD
+name: CI Development
 
 on:
-  push:
-    branches:
-      - develop
   pull_request:
     branches:
       - develop
+    paths:
+      - 'feature/*'
 
 jobs:
   lint:
@@ -43,16 +42,3 @@ jobs:
         with:
           path: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: development-env
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to Development
-        id: deployment
-        uses: actions/deploy-pages@v2
