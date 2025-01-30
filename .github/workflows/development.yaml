@@ -45,8 +45,5 @@ jobs:
     environment: development-env
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy to development
-        run: |
-          npm install -g gh-pages
-          gh-pages -d dist
-          echo "Deployment to development complete"
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
