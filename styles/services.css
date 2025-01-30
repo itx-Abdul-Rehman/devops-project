@@ -1,0 +1,12 @@
+/* Services Page Styles */
+.services {
+    padding: 20px;
+}
+
+.services ul {
+    list-style-type: none;
+}
+
+.services ul li {
+    padding: 5px 0;
+}
