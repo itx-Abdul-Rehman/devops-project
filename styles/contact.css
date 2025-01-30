@@ -1,0 +1,23 @@
+/* Contact Us Page Styles */
+.contact-us {
+    padding: 20px;
+}
+
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-us input, .contact-us textarea {
+    padding: 10px;
+    font-size: 1em;
+}
+
+.contact-us button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
