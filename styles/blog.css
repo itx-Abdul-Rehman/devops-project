@@ -1,0 +1,17 @@
+/* Blog Page Styles */
+.blog {
+    padding: 20px;
+}
+
+.blog article {
+    margin-bottom: 20px;
+}
+
+.blog article h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.blog article p {
+    font-size: 1.1em;
+}
