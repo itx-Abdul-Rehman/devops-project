@@ -1,0 +1,18 @@
+/* Portfolio Page Styles */
+.portfolio {
+    padding: 20px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
