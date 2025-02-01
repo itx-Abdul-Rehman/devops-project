@@ -1,12 +1,90 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Highlight color on hover */
+}
+
+/* About Us Section Styles */
 .about-us {
-    padding: 20px;
+    padding: 40px 20px; 
 }
 
 .about-us h1 {
-    font-size: 1.5em;
+    font-size: 2.5em; /* Larger font size for emphasis */
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateY(-20px); /* Slide down effect */
+    animation: slideIn 0.5s forwards ease-in-out; /* Slide-in animation */
 }
 
 .about-us h2 {
-    margin-top: 20px;
-    font-size: 1.2em;
+    font-size: 2em; /* Emphasized heading size */
+}
+
+.about-us p {
+    margin-bottom: 20px; 
+}
+
+/* Team Member Styles */
+.team-member {
+    margin-bottom: 30px; 
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateY(20px); /* Slide down effect */
+    animation: fadeInUp 0.5s forwards ease-in-out; /* Fade-in animation */
+}
+
+/* Delayed animations for team members */
+.team-member:nth-child(1) { animation-delay: 0.2s; }
+.team-member:nth-child(2) { animation-delay: 0.4s; }
+.team-member:nth-child(3) { animation-delay: 0.6s; }
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Keyframes for animations */
+@keyframes slideIn {
+   to {
+       opacity: 1; 
+       transform: translateY(0); 
+   }
+}
+
+@keyframes fadeInUp {
+   to {
+       opacity: 1; 
+       transform: translateY(0); 
+   }
 }
