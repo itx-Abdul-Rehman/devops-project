@@ -35,7 +35,6 @@ nav ul li a:hover {
 
 /* Hero Section Styles */
 .hero {
-    background-image: url('hero-image.jpg'); /* Add your image path */
     height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
