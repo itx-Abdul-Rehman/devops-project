@@ -1,0 +1,42 @@
+name: CI Staging
+
+on:
+  pull_request:
+    branches:
+      - release
+  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build the project
+        run: npm run build
+
+  analyze:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Code Analysis
+        run: npm run analyze
