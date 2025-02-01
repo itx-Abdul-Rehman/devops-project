@@ -1,12 +1,81 @@
-/* Services Page Styles */
-.services {
-    padding: 20px;
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark gray text */
 }
 
-.services ul {
+header {
+    background-color: #000; /* Black background */
+    color: white; /* White text */
+    padding: 10px 0;
+}
+
+nav ul {
     list-style-type: none;
+    text-align: center;
 }
 
-.services ul li {
-    padding: 5px 0;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hero Section */
+.services-hero {
+    background-color: #000; /* Black background */
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.services-hero h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.services-hero p {
+    font-size: 1.25rem;
+}
+
+/* Service List */
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.service {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark gray text */
+    padding: 20px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.service h2 {
+    color: #000; /* Black text for service title */
+    font-size: 1.5rem;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #555; /* Lighter gray text */
 }
