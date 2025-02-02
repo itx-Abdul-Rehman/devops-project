@@ -3,7 +3,7 @@ name: CI Staging
 on:
   pull_request:
     branches:
-      - release
+      - release/*
   
 
 jobs:
