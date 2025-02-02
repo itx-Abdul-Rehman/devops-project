@@ -17,5 +17,12 @@
     "url": "https://github.com/imranucp/term-project-f24/issues"
   },
   "homepage": "https://github.com/imranucp/term-project-f24#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.0.0", // Ensure Jest is installed for testing
+    "webpack": "^5.0.0", // Ensure Webpack is installed for building
+    "webpack-cli": "^5.0.0", // Ensure Webpack CLI is installed
+    "eslint": "^8.0.0", // Ensure ESLint is installed for code analysis
+    "stylelint": "^15.0.0" // Ensure Stylelint is installed for CSS analysis
+  }
 }
