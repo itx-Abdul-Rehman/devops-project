@@ -12,23 +12,30 @@ permissions:
 
 
 jobs:
-  deploy:
+ build:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build website using Parcel
+        run: parcel build src/*.html
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+ deploy:
+    runs-on: ubuntu-latest
+    needs: build  
     environment:
       name: production-env 
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}  
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-
-      - name: Build the project
-        run: npm run build
-      
       - name: Deploy to Production
         id: deployment
         uses: actions/deploy-pages@v4
