@@ -53,7 +53,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Code Analysis
         run: npm run analyze || exit 0 
