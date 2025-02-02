@@ -20,8 +20,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Linting
-        run: npm run lint
+      - name: Lint HTML files using npx
+        run: npx htmlhint src/*.html
+      - name: Lint CSS files using npx
+        run: npx stylelint styles/*.css
 
   test:
     runs-on: ubuntu-latest
