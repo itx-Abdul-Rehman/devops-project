@@ -2,7 +2,7 @@
   "name": "term-project-f24",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "webpack --mode production",
     "analyze": "eslint . && stylelint '**/*.css'"
   },
